@@ -1,0 +1,75 @@
+
+package dominio;
+import java.io.Serializable;
+import java.util.*;
+
+public class Persona implements Serializable {
+
+    //Atributos de Persona
+    private String nombre;
+    private String apellidos;
+    private Locale nacionalidad;
+    private Date fechaDeNacimiento;
+    private String pathPerfil;
+    //private String perfil;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public Locale getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String countryCode) {
+        this.nacionalidad = new Locale("",countryCode);
+    }
+
+    public Date getFechaDeNacimiento() {
+        return fechaDeNacimiento;
+    }
+
+    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    public String getPathPerfil() {
+        return pathPerfil;
+    }
+
+    public void setPathPerfil( String perfil) {
+        this.pathPerfil = perfil;
+    }
+    
+    
+    
+    public Persona(String nombre, String apellidos, String countryCode, Date fechaDeNacimiento, String perfil) {
+        this.setNombre(nombre);
+        this.setApellidos(apellidos); 
+        this.setNacionalidad(countryCode); 
+        this.setFechaDeNacimiento(fechaDeNacimiento); 
+        this.setPathPerfil(perfil);
+    }
+    
+    public Persona(){
+        this.setNombre(""); 
+        this.setApellidos("");
+        this.setNacionalidad("");
+        this.fechaDeNacimiento = new Date();
+        this.setPathPerfil("/imagenes/avatar.png"); 
+    }
+    
+    
+}
