@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Alimento {
     private String nombre;
     private String familia;
+    int cantidades;
     //private Familia familia;
     //private Diccionario<String,String> nutrientes;
     private ArrayList<String> nutrientes;
