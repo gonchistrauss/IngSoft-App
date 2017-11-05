@@ -11,7 +11,8 @@ public class Persona implements Serializable {
     private Locale nacionalidad;
     private Date fechaDeNacimiento;
     private String pathPerfil;
-    //private String perfil;
+    private ArrayList<Consulta> consultas;
+    //private String mail;
 
     public String getNombre() {
         return nombre;
@@ -53,6 +54,13 @@ public class Persona implements Serializable {
         this.pathPerfil = perfil;
     }
     
+    public ArrayList<Consulta> getConsultas(){
+        return consultas;
+    }
+    
+    public void agregarConsulta(Consulta nuevaConsulta){
+        this.consultas.add(nuevaConsulta);
+    }
     
     
     public Persona(String nombre, String apellidos, String countryCode, Date fechaDeNacimiento, String perfil) {
@@ -61,6 +69,7 @@ public class Persona implements Serializable {
         this.setNacionalidad(countryCode); 
         this.setFechaDeNacimiento(fechaDeNacimiento); 
         this.setPathPerfil(perfil);
+        consultas = new ArrayList<Consulta>();
     }
     
     public Persona(){
@@ -68,7 +77,8 @@ public class Persona implements Serializable {
         this.setApellidos("");
         this.setNacionalidad("");
         this.fechaDeNacimiento = new Date();
-        this.setPathPerfil("/imagenes/avatar.png"); 
+        this.setPathPerfil("/imagenes/avatar.png");
+        consultas = new ArrayList<Consulta>();
     }
     
     
