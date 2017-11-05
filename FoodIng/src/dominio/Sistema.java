@@ -32,8 +32,8 @@ public class Sistema implements Serializable {
         this.getListaUsuarios().add(nuevoUsuario);
     }
 
-    public void agregarProfesional(String nombre, String apellidos, String nacionalidad, Date nacimiento, String pathPerfil, String titulo, String paisTitulo, Date fechaGrad) {
-        Profesional nuevoProfesional = new Profesional(nombre, apellidos, nacionalidad, nacimiento, pathPerfil, titulo, fechaGrad, paisTitulo);
+    public void agregarProfesional(String nombre, String apellidos, String nacionalidad, Date nacimiento, String pathPerfil, String titulo,String paisTitulo,Date fechaGrad) {
+        Profesional nuevoProfesional = new Profesional(nombre,apellidos,nacionalidad,nacimiento,pathPerfil,titulo,fechaGrad,paisTitulo);
         this.getListaProfesionales().add(nuevoProfesional);
     }
 
@@ -41,5 +41,5 @@ public class Sistema implements Serializable {
         Alimento nuevoAlimento = new Alimento(nombre, familia);
         this.getListaAlimentos().add(nuevoAlimento);
 
-    }
+}
 }

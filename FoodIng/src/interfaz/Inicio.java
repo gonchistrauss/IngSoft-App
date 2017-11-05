@@ -13,6 +13,7 @@ public class Inicio {
         }
         catch (IOException | ClassNotFoundException e){
             s = new Sistema();
+            System.out.println("Archivo no encontrado");
         }
          menuPrincipal menu = new menuPrincipal(s);
          menu.setVisible(true);
