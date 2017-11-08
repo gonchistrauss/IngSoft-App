@@ -1,6 +1,11 @@
 
 package interfaz;
 import dominio.Sistema;
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class menuPrincipal extends javax.swing.JFrame {
     private Sistema modelo;
@@ -27,6 +32,11 @@ public class menuPrincipal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(650, 440));
         setResizable(false);
         setSize(new java.awt.Dimension(650, 440));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         btnRegistroUsuario.setBackground(new java.awt.Color(102, 102, 102));
@@ -82,6 +92,25 @@ public class menuPrincipal extends javax.swing.JFrame {
     private void btnRegistroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistroUsuarioActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            FileOutputStream file = new FileOutputStream("fooding.app");
+
+            BufferedOutputStream buffer = new BufferedOutputStream(file);
+
+            ObjectOutputStream obj = new ObjectOutputStream(buffer);
+
+            obj.writeObject(modelo);
+
+            obj.flush();
+            obj.close();
+        } catch (FileNotFoundException ex) {
+
+        } catch (IOException e) {
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosing
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngreso;
