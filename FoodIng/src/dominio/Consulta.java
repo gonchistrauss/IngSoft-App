@@ -1,16 +1,24 @@
 package dominio;
 
 import java.util.ArrayList;
-import dominio.utils.Tipos.*;
+import utils.Tipos.*;
 
 public class Consulta {
 
-    //private int id;
+    private int id;
     private Usuario usuario;
     private Profesional profesional;
     private Estado estado;
     private ArrayList<Incidencia> listaIncidencias;
     private Categoria categoria;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Usuario getUsuario() {
         return usuario;

@@ -1,6 +1,6 @@
 package dominio;
 
-import dominio.utils.Tipos.*;
+import utils.Tipos.*;
 import java.io.Serializable;
 import java.util.*;
 
@@ -57,11 +57,8 @@ public class Sistema implements Serializable {
     }
 
     public void cargarConsultasPendientes() {
-        for (int i = 0; i < this.getListaUsuarios().size(); i++) {
-            Usuario usuario = this.getListaUsuarios().get(i);
-            ArrayList<Consulta> consultasDeUsuario = usuario.getConsultas();
-            for (int j = 0; j < consultasDeUsuario.size(); j++) {
-                Consulta consulta = consultasDeUsuario.get(i);
+        for (Usuario usuario : this.getListaUsuarios()) {
+            for (Consulta consulta : usuario.getConsultas()) {
                 if (consulta.getEstado() == Estado.PENDIENTE) {
                     if (consulta.getCategoria() == Categoria.DIRECTA) {
                         this.getListaConsultasDirectasPendientes().add(consulta);

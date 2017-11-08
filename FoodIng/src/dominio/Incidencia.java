@@ -6,7 +6,16 @@ public class Incidencia {
 
     private String mensaje;
     private Date fechaDeCreacion;
+    private Persona creador;
     private Consulta consulta;
+
+    public Persona getCreador() {
+        return creador;
+    }
+
+    public void setCreador(Persona creador) {
+        this.creador = creador;
+    }
 
     public String getMensaje() {
         return mensaje;
@@ -32,9 +41,10 @@ public class Incidencia {
         this.consulta = consulta;
     }
 
-    public Incidencia(String mensaje, Date fecha, Consulta unaConsulta) {
+    public Incidencia(String mensaje, Date fecha, Consulta unaConsulta, Persona unCreador) {
         this.setConsulta(unaConsulta);
         this.setMensaje(mensaje);
         this.setFechaDeCreacion(fecha);
+        this.setCreador(unCreador);
     }
 }

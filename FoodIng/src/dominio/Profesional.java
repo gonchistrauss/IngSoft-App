@@ -2,6 +2,7 @@ package dominio;
 
 import java.util.*;
 import java.io.Serializable;
+
 public class Profesional extends Persona implements Serializable {
 
     private String tituloProfesional;

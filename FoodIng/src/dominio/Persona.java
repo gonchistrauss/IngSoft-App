@@ -1,9 +1,9 @@
-
 package dominio;
+
 import java.io.Serializable;
 import java.util.*;
 
-public class Persona implements Serializable {
+public abstract class Persona implements Serializable {
 
     //Atributos de Persona
     private String nombre;
@@ -35,7 +35,7 @@ public class Persona implements Serializable {
     }
 
     public void setNacionalidad(String countryCode) {
-        this.nacionalidad = new Locale("",countryCode);
+        this.nacionalidad = new Locale("", countryCode);
     }
 
     public Date getFechaDeNacimiento() {
@@ -50,36 +50,35 @@ public class Persona implements Serializable {
         return pathPerfil;
     }
 
-    public void setPathPerfil( String perfil) {
+    public void setPathPerfil(String perfil) {
         this.pathPerfil = perfil;
     }
-    
-    public ArrayList<Consulta> getConsultas(){
+
+    public ArrayList<Consulta> getConsultas() {
         return consultas;
     }
-    
-    public void agregarConsulta(Consulta nuevaConsulta){
+
+    public void agregarConsulta(Consulta nuevaConsulta) {
         this.consultas.add(nuevaConsulta);
+        nuevaConsulta.setId(consultas.size());
     }
-    
-    
+
     public Persona(String nombre, String apellidos, String countryCode, Date fechaDeNacimiento, String perfil) {
         this.setNombre(nombre);
-        this.setApellidos(apellidos); 
-        this.setNacionalidad(countryCode); 
-        this.setFechaDeNacimiento(fechaDeNacimiento); 
+        this.setApellidos(apellidos);
+        this.setNacionalidad(countryCode);
+        this.setFechaDeNacimiento(fechaDeNacimiento);
         this.setPathPerfil(perfil);
         consultas = new ArrayList<Consulta>();
     }
-    
-    public Persona(){
-        this.setNombre(""); 
+
+    public Persona() {
+        this.setNombre("");
         this.setApellidos("");
         this.setNacionalidad("");
         this.fechaDeNacimiento = new Date();
         this.setPathPerfil("/imagenes/avatar.png");
         consultas = new ArrayList<Consulta>();
     }
-    
-    
+
 }
