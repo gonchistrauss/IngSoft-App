@@ -24,7 +24,7 @@ public class menuPrincipal extends javax.swing.JFrame {
         btnRegistroProfesional = new javax.swing.JButton();
         labelFoodIng = new javax.swing.JLabel();
         btnIngreso = new javax.swing.JButton();
-        btnIngreso1 = new javax.swing.JButton();
+        btnIngresoUsuario = new javax.swing.JButton();
         labelBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,11 +72,16 @@ public class menuPrincipal extends javax.swing.JFrame {
         getContentPane().add(btnIngreso);
         btnIngreso.setBounds(340, 80, 180, 50);
 
-        btnIngreso1.setBackground(new java.awt.Color(102, 102, 102));
-        btnIngreso1.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
-        btnIngreso1.setText("Soy usuario");
-        getContentPane().add(btnIngreso1);
-        btnIngreso1.setBounds(240, 140, 180, 50);
+        btnIngresoUsuario.setBackground(new java.awt.Color(102, 102, 102));
+        btnIngresoUsuario.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+        btnIngresoUsuario.setText("Soy usuario");
+        btnIngresoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresoUsuarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnIngresoUsuario);
+        btnIngresoUsuario.setBounds(240, 140, 180, 50);
 
         labelBackground.setIcon(new javax.swing.ImageIcon("/Users/gonzalostrauss/Downloads/rsz_nutrition.jpg")); // NOI18N
         getContentPane().add(labelBackground);

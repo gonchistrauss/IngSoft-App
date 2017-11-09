@@ -34,4 +34,10 @@ public class Usuario extends Persona implements Serializable {
         restricciones = new ArrayList<Alimento>();
     }
     
+     //Metodo toString
+    @Override
+    public String toString() {
+        return this.getNombre() + " " + this.getApellidos();
+    }
+    
 }
