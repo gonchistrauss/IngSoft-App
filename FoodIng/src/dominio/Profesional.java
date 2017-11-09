@@ -41,4 +41,10 @@ public class Profesional extends Persona implements Serializable {
         this.setPaisEstudio(paisEstudio);
         this.setTituloProfesional(titulo);
     }
+    
+      //Metodo toString
+    @Override
+    public String toString() {
+        return this.getNombre() + " " + this.getApellidos();
+    }
 }
