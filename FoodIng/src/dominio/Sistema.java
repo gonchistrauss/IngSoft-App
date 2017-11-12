@@ -69,4 +69,13 @@ public class Sistema implements Serializable {
             }
         }
     }
+
+    public Usuario obtenerUsuario(Usuario unUsuario) {
+        for (Usuario usuario : this.getListaUsuarios()) {
+            if (usuario.equals((Usuario) unUsuario)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
 }

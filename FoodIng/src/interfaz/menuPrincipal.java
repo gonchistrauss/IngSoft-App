@@ -141,8 +141,8 @@ public class menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresoUsuarioActionPerformed
 
     private void btnRegistroProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroProfesionalActionPerformed
-        ventanaSeleccionProfesional ventana = new ventanaSeleccionProfesional(modelo);
-        ventana.setVisible(true);
+//        ventanaSeleccionProfesional ventana = new ventanaSeleccionProfesional(modelo);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btnRegistroProfesionalActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -11,8 +11,17 @@ public abstract class Persona implements Serializable {
     private Locale nacionalidad;
     private Date fechaDeNacimiento;
     private String pathPerfil;
+    private boolean sesionActiva;
     private ArrayList<Consulta> consultas;
     //private String mail;
+
+    public boolean esSesionActiva() {
+        return sesionActiva;
+    }
+
+    public void setSesionActiva(boolean sesionActiva) {
+        this.sesionActiva = sesionActiva;
+    }
 
     public String getNombre() {
         return nombre;
@@ -70,6 +79,7 @@ public abstract class Persona implements Serializable {
         this.setFechaDeNacimiento(fechaDeNacimiento);
         this.setPathPerfil(perfil);
         consultas = new ArrayList<Consulta>();
+        this.setSesionActiva(false);
     }
 
     public Persona() {
@@ -79,6 +89,7 @@ public abstract class Persona implements Serializable {
         this.fechaDeNacimiento = new Date();
         this.setPathPerfil("/imagenes/avatar.png");
         consultas = new ArrayList<Consulta>();
+        this.setSesionActiva(false);
     }
 
 }
