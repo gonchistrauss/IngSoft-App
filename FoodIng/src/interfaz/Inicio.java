@@ -25,7 +25,7 @@ public class Inicio {
             s = new Sistema();
             System.out.println("Archivo no encontrado");
         }
-        menuPrincipal menu = new menuPrincipal(s);
+        MenuPrincipal menu = new MenuPrincipal(s);
         menu.setVisible(true);
     }
 }

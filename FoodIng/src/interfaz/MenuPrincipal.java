@@ -9,11 +9,11 @@ import java.io.ObjectOutputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class menuPrincipal extends javax.swing.JFrame {
+public class MenuPrincipal extends javax.swing.JFrame {
     
     private Sistema modelo;
     
-    public menuPrincipal(Sistema sis) {
+    public MenuPrincipal(Sistema sis) {
         this.modelo = sis;
         setLocationRelativeTo(null);
         initComponents();
@@ -103,10 +103,10 @@ public class menuPrincipal extends javax.swing.JFrame {
         if (seleccionRegistro != null) {
             String opcion = (String) seleccionRegistro;
             if (opcion.equals("Usuario")) {
-                ventanaRegistroUsuario ventana = new ventanaRegistroUsuario(modelo);
+                VentanaRegistroUsuario ventana = new VentanaRegistroUsuario(modelo);
                 ventana.setVisible(true);
             } else {
-                ventanaRegistroProfesional ventana = new ventanaRegistroProfesional(modelo);
+                VentanaRegistroProfesional ventana = new VentanaRegistroProfesional(modelo);
                 ventana.setVisible(true);
             }
         }
@@ -136,7 +136,7 @@ public class menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnIngresoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoUsuarioActionPerformed
-        ventanaSeleccionUsuario ventana = new ventanaSeleccionUsuario(modelo);
+        VentanaSeleccionUsuario ventana = new VentanaSeleccionUsuario(modelo);
         ventana.setVisible(true);
     }//GEN-LAST:event_btnIngresoUsuarioActionPerformed
 

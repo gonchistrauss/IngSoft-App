@@ -4,12 +4,12 @@ import dominio.*;
 import utils.Tipos;
 import utils.Tipos.Categoria;
 
-public class ventanaPanelUsuario extends javax.swing.JDialog {
+public class VentanaPanelUsuario extends javax.swing.JDialog {
 
     private Sistema modelo;
     private Usuario usuario;
 
-    public ventanaPanelUsuario(Sistema miSis) {
+    public VentanaPanelUsuario(Sistema miSis) {
         initComponents();
         setLocationRelativeTo(null);
         setModal(true);
@@ -38,7 +38,6 @@ public class ventanaPanelUsuario extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Panel de usuario");
         setMinimumSize(new java.awt.Dimension(820, 400));
-        setPreferredSize(new java.awt.Dimension(820, 400));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {

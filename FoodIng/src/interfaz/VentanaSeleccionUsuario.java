@@ -3,11 +3,11 @@ package interfaz;
 import dominio.*;
 import javax.swing.ImageIcon;
 
-public class ventanaSeleccionUsuario extends javax.swing.JDialog {
+public class VentanaSeleccionUsuario extends javax.swing.JDialog {
 
     private Sistema modelo;
 
-    public ventanaSeleccionUsuario(Sistema miSis) {
+    public VentanaSeleccionUsuario(Sistema miSis) {
         initComponents();
         setLocationRelativeTo(null);
         setModal(true);
@@ -44,7 +44,6 @@ public class ventanaSeleccionUsuario extends javax.swing.JDialog {
         lblSeleccion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 300));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -96,7 +95,7 @@ public class ventanaSeleccionUsuario extends javax.swing.JDialog {
     private void btnSeleccionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionUsuarioActionPerformed
         Usuario usuarioSeleccionado = (Usuario) listaUsuarios.getSelectedValue();
         usuarioSeleccionado.setSesionActiva(true);
-        ventanaPanelUsuario ventana = new ventanaPanelUsuario(modelo);
+        VentanaPanelUsuario ventana = new VentanaPanelUsuario(modelo);
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSeleccionUsuarioActionPerformed
