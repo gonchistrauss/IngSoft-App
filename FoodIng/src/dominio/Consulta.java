@@ -66,4 +66,18 @@ public class Consulta {
         this.setCategoria(unaCategoria);
         listaIncidencias = new ArrayList<Incidencia>();
     }
+    
+    public String toStringDescripcion(){
+        return "Categoria: " + this.getCategoria().name() + " - Usuario: " + this.getUsuario() + " - Profesional: " + this.getProfesional() + " - Estado: " + this.getEstado().name();
+    }
+    
+       //Metodo toString
+    @Override
+    public String toString() {
+       String consulta = "";
+       for(Incidencia incidencia : this.getListaIncidencias()){
+           consulta += incidencia.toString() + "\n *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n";
+       }
+       return consulta;
+    }
 }

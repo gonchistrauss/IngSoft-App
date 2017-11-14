@@ -47,4 +47,12 @@ public class Incidencia {
         this.setFechaDeCreacion(fecha);
         this.setCreador(unCreador);
     }
+    
+       //Metodo toString
+    @Override
+    public String toString() {
+        return "Fecha: " + this.getFechaDeCreacion() + "\n"
+                + "Origen: " + this.getCreador() + "\n" 
+                + "Descripción:" + this.getMensaje();
+    }
 }

@@ -69,6 +69,25 @@ public class Sistema implements Serializable {
             }
         }
     }
+    
+
+    public Usuario obtenerSesionActivaUsuario() {
+        for(Usuario usuario : this.getListaUsuarios()){
+            if(usuario.esSesionActiva()){
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+    public Profesional obtenerSesionActivaProfesional() {
+        for(Profesional profesional : this.getListaProfesionales()){
+            if(profesional.esSesionActiva()){
+                return profesional;
+            }
+        }
+        return null;
+    }
 
     public Usuario obtenerUsuario(Usuario unUsuario) {
         for (Usuario usuario : this.getListaUsuarios()) {

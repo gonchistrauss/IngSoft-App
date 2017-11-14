@@ -96,6 +96,9 @@ public class ventanaSeleccionUsuario extends javax.swing.JDialog {
     private void btnSeleccionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionUsuarioActionPerformed
         Usuario usuarioSeleccionado = (Usuario) listaUsuarios.getSelectedValue();
         usuarioSeleccionado.setSesionActiva(true);
+        ventanaPanelUsuario ventana = new ventanaPanelUsuario(modelo);
+        ventana.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSeleccionUsuarioActionPerformed
 
     private void listaUsuariosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaUsuariosValueChanged
