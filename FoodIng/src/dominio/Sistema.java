@@ -69,6 +69,7 @@ public class Sistema implements Serializable {
             }
         }
     }
+    
 
     public Usuario obtenerSesionActivaUsuario() {
         for(Usuario usuario : this.getListaUsuarios()){

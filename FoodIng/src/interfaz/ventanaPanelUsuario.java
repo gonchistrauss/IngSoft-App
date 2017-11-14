@@ -1,6 +1,8 @@
 package interfaz;
 
 import dominio.*;
+import utils.Tipos;
+import utils.Tipos.Categoria;
 
 public class ventanaPanelUsuario extends javax.swing.JDialog {
 
@@ -13,40 +15,48 @@ public class ventanaPanelUsuario extends javax.swing.JDialog {
         setModal(true);
         modelo = miSis;
         usuario = modelo.obtenerSesionActivaUsuario();
-        nombreUsuario.setText(usuario.getNombre());
+        System.out.println(usuario.toString());
+        Consulta nuevaConsulta = new Consulta(usuario, Categoria.DIRECTA);
+        System.out.println("Consulta:" + nuevaConsulta.toStringDescripcion());
+        usuario.agregarConsulta(nuevaConsulta);
+        cargarListaConsultas();
+    }
+
+    public void cargarListaConsultas() {
+        listaConsultas.setListData(usuario.getConsultas().toArray());
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nombreUsuario = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaConsultas = new javax.swing.JList<>();
+        panelMensajes = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Panel de usuario");
+        setMinimumSize(new java.awt.Dimension(820, 400));
+        setPreferredSize(new java.awt.Dimension(820, 400));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(null);
 
-        nombreUsuario.setText("jLabel1");
+        jScrollPane1.setViewportView(listaConsultas);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(nombreUsuario)
-                .addGap(174, 174, 174))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(nombreUsuario)
-                .addContainerGap(211, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(230, 30, 200, 132);
+
+        jTextPane1.setEditable(false);
+        panelMensajes.setViewportView(jTextPane1);
+
+        getContentPane().add(panelMensajes);
+        panelMensajes.setBounds(440, 30, 360, 180);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -57,6 +67,9 @@ public class ventanaPanelUsuario extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel nombreUsuario;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JList<Object> listaConsultas;
+    private javax.swing.JScrollPane panelMensajes;
     // End of variables declaration//GEN-END:variables
 }

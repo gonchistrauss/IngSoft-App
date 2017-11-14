@@ -14,7 +14,7 @@ public abstract class Persona implements Serializable {
     private boolean sesionActiva;
     private ArrayList<Consulta> consultas;
     //private String mail;
-
+    
     public boolean esSesionActiva() {
         return sesionActiva;
     }
@@ -68,7 +68,7 @@ public abstract class Persona implements Serializable {
     }
 
     public void agregarConsulta(Consulta nuevaConsulta) {
-        this.consultas.add(nuevaConsulta);
+        consultas.add(nuevaConsulta);
         nuevaConsulta.setId(consultas.size());
     }
 
