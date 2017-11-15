@@ -10,15 +10,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class MenuPrincipal extends javax.swing.JFrame {
-    
+
     private Sistema modelo;
-    
+
     public MenuPrincipal(Sistema sis) {
+        initComponents();
         this.modelo = sis;
         setLocationRelativeTo(null);
-        initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -119,19 +119,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         try {
             FileOutputStream file = new FileOutputStream("fooding.app");
-            
+
             BufferedOutputStream buffer = new BufferedOutputStream(file);
-            
+
             ObjectOutputStream obj = new ObjectOutputStream(buffer);
-            
+
             obj.writeObject(modelo);
-            
+
             obj.flush();
             obj.close();
         } catch (FileNotFoundException ex) {
-            
+
         } catch (IOException e) {
-            
+
         }        // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosing
 
