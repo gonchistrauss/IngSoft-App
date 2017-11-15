@@ -21,7 +21,6 @@ public class VentanaRegistroUsuario extends javax.swing.JDialog {
         this.comboPaises.setModel(new DefaultComboBoxModel(Tipos.obtenerpaises()));
         jDate.setDateFormatString("dd/MM/yyyy");
         perfil = new ImageIcon(getClass().getResource("/imagenes/avatar.png"));
-
     }
 
     @SuppressWarnings("unchecked")
