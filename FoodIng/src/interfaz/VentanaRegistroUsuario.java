@@ -21,6 +21,7 @@ public class VentanaRegistroUsuario extends javax.swing.JDialog {
         this.comboPaises.setModel(new DefaultComboBoxModel(Tipos.obtenerpaises()));
         jDate.setDateFormatString("dd/MM/yyyy");
         perfil = new ImageIcon(getClass().getResource("/imagenes/avatar.png"));
+
     }
 
     @SuppressWarnings("unchecked")
@@ -141,7 +142,7 @@ public class VentanaRegistroUsuario extends javax.swing.JDialog {
         getContentPane().add(lblOkPais);
         lblOkPais.setBounds(560, 220, 60, 24);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(10, 50, 600, 10);
+        jSeparator1.setBounds(10, 50, 600, 12);
 
         getContentPane().add(comboPaises);
         comboPaises.setBounds(290, 230, 270, 40);
