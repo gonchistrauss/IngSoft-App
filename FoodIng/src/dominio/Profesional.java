@@ -33,10 +33,10 @@ public class Profesional extends Persona implements Serializable {
         this.paisEstudio = new Locale("", countryCode);
     }
 
-    public Profesional(String nombre, String apellidos, String pais,
+    public Profesional(String nombre, String apellidos,
             Date nacimiento, String pathPerfil, String titulo, Date fechaGrad,
             String paisEstudio) {
-        super(nombre, apellidos, pais, nacimiento, pathPerfil);
+        super(nombre, apellidos, nacimiento, pathPerfil);
         this.setFechaDeGraduacion(fechaGrad);
         this.setPaisEstudio(paisEstudio);
         this.setTituloProfesional(titulo);

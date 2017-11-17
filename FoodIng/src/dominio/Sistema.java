@@ -45,8 +45,8 @@ public class Sistema implements Serializable {
         this.getListaUsuarios().add(nuevoUsuario);
     }
 
-    public void agregarProfesional(String nombre, String apellidos, String nacionalidad, Date nacimiento, String pathPerfil, String titulo, String paisTitulo, Date fechaGrad) {
-        Profesional nuevoProfesional = new Profesional(nombre, apellidos, nacionalidad, nacimiento, pathPerfil, titulo, fechaGrad, paisTitulo);
+    public void agregarProfesional(String nombre, String apellidos, Date nacimiento, String pathPerfil, String titulo, String paisTitulo, Date fechaGrad) {
+        Profesional nuevoProfesional = new Profesional(nombre, apellidos, nacimiento, pathPerfil, titulo, fechaGrad, paisTitulo);
         this.getListaProfesionales().add(nuevoProfesional);
     }
 

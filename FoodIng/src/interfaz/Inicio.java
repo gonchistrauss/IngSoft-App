@@ -20,7 +20,7 @@ public class Inicio {
             ObjectInputStream obj = new ObjectInputStream(buffer);
             s = (Sistema) obj.readObject();
             s.agregarUsuario("usuarioPrueba" + s.getListaUsuarios().size(), "apellidoPrueba" + s.getListaUsuarios().size(), "UY", date, "/imagenes/avatar.png");
-            s.agregarProfesional("profesionalPrueba" + s.getListaProfesionales().size(), "apellidoPrueba" + s.getListaProfesionales().size(),"", date, string, string, string, date);
+            //s.agregarProfesional("profesionalPrueba" + s.getListaProfesionales().size(), "apellidoPrueba" + s.getListaProfesionales().size(),"", date, string, string, string, date);
         } catch (IOException | ClassNotFoundException e) {
             s = new Sistema();
             System.out.println("Archivo no encontrado");

@@ -8,7 +8,6 @@ public abstract class Persona implements Serializable {
     //Atributos de Persona
     private String nombre;
     private String apellidos;
-    private Locale nacionalidad;
     private Date fechaDeNacimiento;
     private String pathPerfil;
     private boolean sesionActiva;
@@ -39,14 +38,6 @@ public abstract class Persona implements Serializable {
         this.apellidos = apellidos;
     }
 
-    public Locale getNacionalidad() {
-        return nacionalidad;
-    }
-
-    public void setNacionalidad(String countryCode) {
-        this.nacionalidad = new Locale("", countryCode);
-    }
-
     public Date getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
@@ -72,10 +63,9 @@ public abstract class Persona implements Serializable {
         nuevaConsulta.setId(consultas.size());
     }
 
-    public Persona(String nombre, String apellidos, String countryCode, Date fechaDeNacimiento, String perfil) {
+    public Persona(String nombre, String apellidos, Date fechaDeNacimiento, String perfil) {
         this.setNombre(nombre);
         this.setApellidos(apellidos);
-        this.setNacionalidad(countryCode);
         this.setFechaDeNacimiento(fechaDeNacimiento);
         this.setPathPerfil(perfil);
         consultas = new ArrayList<Consulta>();
@@ -85,7 +75,6 @@ public abstract class Persona implements Serializable {
     public Persona() {
         this.setNombre("");
         this.setApellidos("");
-        this.setNacionalidad("");
         this.fechaDeNacimiento = new Date();
         this.setPathPerfil("/imagenes/avatar.png");
         consultas = new ArrayList<Consulta>();
